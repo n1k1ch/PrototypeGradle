@@ -1,0 +1,116 @@
+//first
+task hello {
+	doLast {
+		println 'Hallo world'
+	}
+}
+
+//second
+task hello2 << {
+	println 'Hallo 2 world'
+}
+
+//some groovy functions
+task upper << {
+	String someString = 'My_NaMe'
+	println "Original: " + someString
+	println "Upper case: " + someString.toUpperCase()
+}
+
+//closure repeated 4 times
+task count << {
+	4.times { println "$it __ $it"}
+}
+
+//parent task
+task water << {
+	println "Water"
+}
+
+//dependant on "water" task. "water" must be declared earlier
+task dependantTulip(dependsOn: water) << {
+	println "I'm tulip, depend on previous participant"
+}
+
+//dependant on "sun" task. "sun" could be declared 
+task lazySunflower(dependsOn: 'sun') << {
+	println "I'm sunflower, lazy depend on following participant"
+}
+
+//parent task
+task sun << {
+	println "Sun"
+}
+
+//groovy list
+task list << {
+	def list = [1,2,3,4,5]
+	list.each {
+		item -> print item
+	}
+}
+
+
+//dynamic task
+4.times {counter ->
+	task "task$counter" << {
+		println "I'm task number $counter"
+	}
+}
+
+//manipulating existing tasks
+task0.dependsOn task2, task3
+
+//task with behaviour
+
+task behaviourus << {
+	println 'Start '
+}
+behaviourus.doFirst {
+	println "behaviourus.doFirst"
+}
+behaviourus.doLast {
+	println "behaviourus.doLast"
+}
+behaviourus << {
+	println "End"
+}
+
+
+//access task property
+task propertyable << {
+	println "Start propertyable"
+}
+propertyable.doLast {
+	println "Task's name is $propertyable.name!"
+}
+
+
+//extra task properties
+task withExtProperty {
+	ext.myProperty = "myValue"
+	ext.anotherProperty = "anotherValue"
+}
+
+task printExtProperties << {
+	println withExtProperty.myProperty + ", " + withExtProperty.anotherProperty 
+}
+
+
+defaultTasks 'behaviourus','printExtProperties'
+
+task distribution << {
+	println "Building with version=$version"
+}
+
+task release(dependsOn: 'distribution') << {
+	println "Release"
+}
+
+gradle.taskGraph.whenReady {taskGraph ->
+	if(taskGraph.hasTask(release)) {
+		version = '1.0'
+	} else {
+		version = '1.0-SNAPSHOT'
+	}
+}
