@@ -1,7 +1,7 @@
 PrototypeGradle
 ===============
 
-Gradle builds, including:
+Gradle™ build scripts, including:
 
 <table>
 <tr>
