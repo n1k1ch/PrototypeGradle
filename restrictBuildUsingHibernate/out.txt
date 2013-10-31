@@ -1,0 +1,4 @@
+
+-------------------------------
+<org.gradle.api.internal.artifacts.DefaultResolvedArtifact@1b12eaa4 extraAttributes=[:] name=commons-lang3 type=jar ext=jar owner=org.gradle.api.internal.artifacts.ivyservice.dynamicversions.DefaultResolvedModuleVersion@76877f0f id=1 ownerSource=org.gradle.api.internal.artifacts.ivyservice.resolveengine.oldresult.DefaultResolvedConfigurationBuilder$ResolvedDependencyFactory@7e79541d artifactSource=org.gradle.api.internal.artifacts.ivyservice.ResolvedArtifactFactory$1@4f817cc9 file=null>
+-------------------------------
