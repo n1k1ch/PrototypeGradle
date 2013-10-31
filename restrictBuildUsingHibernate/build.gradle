@@ -7,7 +7,7 @@ repositories {
 configurations {
 	println opa
 	compile.incoming.afterResolve {
-		File out = new File("out.txt");
+		File out = new File("out.n1k1chlog");
 		out.delete();
 		def hibernateDependencies = compile.resolvedConfiguration.resolvedArtifacts.findAll {
 			out << "\r\n-------------------------------\r\n"
