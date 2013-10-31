@@ -1,0 +1,9 @@
+apply plugin: "base"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile ''
+}

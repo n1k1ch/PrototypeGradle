@@ -1,0 +1,13 @@
+/*
+Prints "someParam" parameter during "buildscript" phase
+*/
+
+apply plugin: "base"
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	println 'someParam = ' + someParam
+}
