@@ -13,7 +13,5 @@ Gradle builds, including:
 <tr><td><i>restrictBuildUsingHibernate</i></td><td>with failing if some specific dependency is in use</td></tr>
 <tr><td><i>verifyExistenceOfTask</i></td><td>speaks for itself</td></tr>
 </table>
-and
-
-***template*** for quickstarting new scripts
+and ***template*** for quick starting of new scripts
 
