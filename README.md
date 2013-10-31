@@ -12,6 +12,7 @@ Gradle™ build scripts, including:
 <tr><td><i>cmdParameters</i></td><td>with printing parameters passed to gradle</td></tr>
 <tr><td><i>restrictBuildUsingHibernate</i></td><td>with failing if some specific dependency is in use</td></tr>
 <tr><td><i>verifyExistenceOfTask</i></td><td>speaks for itself</td></tr>
+<tr><td><i>parallelTasks</i></td><td>speaks for itself</td></tr>
 </table>
 and ***template*** for quick starting of new scripts
 

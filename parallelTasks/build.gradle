@@ -1,0 +1,47 @@
+apply plugin: "java"
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile 'junit:junit:4.11'
+}
+
+def forks = Math.max(2, (int) (Runtime.runtime.availableProcessors() / 2))
+
+/*<-uncomment to use configuration rule
+tasks.withType(Test) {
+	maxParallelForks = forks
+}
+*/
+
+sourceSets {
+	main {
+		java {
+			srcDir '../javaProject/src/main/java'
+		}
+		resources {
+			srcDir '../javaProject/src/main/java'
+		}
+	}
+	test {
+		java {
+			srcDir '../javaProject/src/test/java'
+		}
+		resources {
+			srcDir '../javaProject/src/test/java'
+		}
+	}
+}
+
+task otherTest(type: Test) {
+	classpath = test.classpath
+	testSrcDirs = test.testSrcDirs
+}
+
+/*
+test {
+	maxParallelForks = forks
+}
+*/
