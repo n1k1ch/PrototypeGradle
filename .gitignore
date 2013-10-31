@@ -10,3 +10,8 @@
 .gradle
 
 build/
+
+
+# log files #
+
+out.txt

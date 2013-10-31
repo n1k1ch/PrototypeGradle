@@ -5,6 +5,7 @@ repositories {
 }
 
 configurations {
+	println opa
 	compile.incoming.afterResolve {
 		File out = new File("out.txt");
 		out.delete();
