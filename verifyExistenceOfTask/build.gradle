@@ -1,9 +1,9 @@
-apply plugin: "base"
+apply plugin: "java"
 
-repositories {
-	mavenCentral()
+gradle.afterProject {
+	if(project.tasks.findByName("hello") == null) {
+		throw new Exception("There is no \"hello\" task")
+	}
 }
 
-dependencies {
-	compile ''
-}
+task hello << {}/*<- comment this to fail build*/
