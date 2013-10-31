@@ -14,5 +14,6 @@ Gradle builds, including:
 <tr><td><i>verifyExistenceOfTask</i></td><td>speaks for itself</td></tr>
 </table>
 and
-*template* for quickstarting new scripts
+
+***template*** for quickstarting new scripts
 
